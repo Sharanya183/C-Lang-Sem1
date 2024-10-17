@@ -1,0 +1,36 @@
+#include <stdio.h>
+
+int main() {
+    int num, even, ctr=0;
+    
+    printf("Enter number: ");
+    scanf("%d", &num);
+    
+    if(num%2==0)
+    {
+        even = 1;
+    }
+    else
+    {
+        even = 0;
+    }
+    
+    while(num != 1)
+    {
+        if (even == 1)
+        {
+            num = num / 2;
+            ctr++;
+        }
+        else
+        {
+            num = (num * 3) + 1;
+            ctr++;
+        }
+
+    }
+    
+    printf("%d", ctr);
+    
+    return 0;
+}
