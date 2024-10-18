@@ -1,0 +1,91 @@
+#include <stdio.h>
+
+int balance = 50000;
+
+void balance_enquiry();
+void withdrawl();
+void deposit();
+void choices();
+
+int main() 
+{
+    int pin, correctpin = 1234, attempt = 0;
+    
+    while (attempt < 3)
+    {
+        printf("Enter PIN: ");
+        scanf("%d", &pin);
+        
+        if (pin == correctpin)
+        {
+            printf("Welcome to SBI!\n");
+            choices();
+            break;
+        }
+        else
+        {
+            attempt++;
+            printf("Wrong PIN!\n");
+        }
+    }
+
+    return 0;
+}
+
+void choices()
+{
+    char choice, ch;
+
+    do
+    {
+        printf("\nB-Balance Enquiry\nW-Cash Withdrawal\nD-Deposit\nE-Exit\n");
+        printf("Your Choice: ");
+        scanf(" %c", &choice);
+
+        switch (choice)
+        {
+            case 'B':
+                balance_enquiry();
+                break;
+            case 'W':
+                withdrawl();
+                break;
+            case 'D':
+                deposit();
+                break;
+            case 'E':
+                printf("Thank you for banking with us!\n");
+                return;
+            default:
+                printf("Error!\n");
+                break;
+        }
+
+        printf("Do you want to continue? (y/n): ");
+        scanf(" %c", &ch);
+
+    } while (ch == 'Y' || ch == 'y');
+}
+
+void withdrawl()
+{
+    int amount;
+    printf("Enter amount to withdraw: ");
+    scanf("%d", &amount);
+    balance -= amount;
+    printf("Current Balance: %d\n", balance);
+}
+
+void deposit()
+{
+    int amount;
+    printf("Enter amount to deposit: ");
+    scanf("%d", &amount);
+    balance += amount;
+    printf("Current Balance: %d\n", balance);
+}
+
+void balance_enquiry()
+{
+    printf("Balance: %d\n", balance);
+}
