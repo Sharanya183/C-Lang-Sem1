@@ -28,6 +28,11 @@ int main()
             printf("Wrong PIN!\n");
         }
     }
+    
+    if(attempt = 3)
+    {
+        printf("Account blocked for the next 24 hours!");
+    }
 
     return 0;
 }
