@@ -1,0 +1,20 @@
+#include <stdio.h>
+
+/*x is a box with the value 10
+
+p is a sticky note saying "the value is in box x"
+
+*p means "go to the address and get the value"
+
+*/
+
+int main(){
+    int a = 10;
+    int *p = &a;
+    
+    printf("%d\n", a);
+    printf("%d\n", &a);
+    printf("%d\n", &p);
+    printf("%d\n", p);
+    printf("%d\n", *p);
+}
